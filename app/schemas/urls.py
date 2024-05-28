@@ -1,4 +1,6 @@
-from pydantic import BaseModel, Field, AnyUrl, ConfigDict
+from urllib.parse import urlparse, parse_qsl, urlunparse, urlencode
+
+from pydantic import BaseModel, Field, AnyUrl, ConfigDict, validator
 
 
 class UrlReadSchema(BaseModel):

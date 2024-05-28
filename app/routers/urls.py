@@ -8,8 +8,9 @@ router = APIRouter()
 
 @router.post("/create/", response_model=UrlReadSchema)
 def create_url(url: UrlCreateSchema, session=Depends(get_session)):
-    service = UrlService(session=session)
-    return service.create_url(original_url=url.original_url.unicode_string())
+    # service = UrlService(session=session)
+    # return service.create_url(original_url=url.original_url.unicode_string())
+    return UrlReadSchema(original_url=url.original_url.unicode_string(), id="1", short_code="sdfjsl")
 
 
 @router.get("/{short_code}/", response_model=UrlReadSchema)
